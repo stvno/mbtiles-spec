@@ -1,24 +1,27 @@
-# MBTiles Specification
+# MBTiles Specification -RDTiles fork!!
 
-MBTiles is a specification for storing tiled map data in
+This spec is almost an exact copy of the MBTiles spec, except it is using 
+the geonovum RD_scales tilescheme as basis
+
+RDTiles is a specification for storing tiled map data in
 [SQLite](http://sqlite.org/) databases for immediate usage and for transfer.
-MBTiles files, known as **tilesets**, must implement the specification below
+RDTiles files, known as **tilesets**, must implement the specification below
 to ensure compatibility with devices.
 
 ## UTFGrid
 
-The MBTiles specification previously contained the
+The RDTiles specification previously contained the
 [UTFGrid specification](https://github.com/mapbox/utfgrid-spec).
 It was removed in version 1.2 and moved into its own specification
-with synced version numbers - so MBTiles 1.2 is compatible with
+with synced version numbers - so RDTiles 1.2 is compatible with
 UTFGrid 1.2. The specs integrate but do not require each other
 for compliance.
 
 # Versions
 
-* **Development** - NOT USABLE: [1.2](https://github.com/mapbox/mbtiles-spec/blob/master/1.2/spec.md)
-* **Stable**: [1.1](https://github.com/mapbox/mbtiles-spec/blob/master/1.1/spec.md)
-* [1.0](https://github.com/mapbox/mbtiles-spec/blob/master/1.0/spec.md)
+* **Development** - NOT USABLE: [1.2](https://github.com/stvno/mbtiles-spec/blob/master/1.2/spec.md)
+* **Stable**: [1.1](https://github.com/stvno/mbtiles-spec/blob/master/1.1/spec.md)
+* [1.0](https://github.com/stvno/mbtiles-spec/blob/master/1.0/spec.md)
 
 # Changelog
 
@@ -35,23 +38,23 @@ for compliance.
 
 # Concept
 
-MBTiles is a compact, restrictive specification. It supports only
+RDTiles is a compact, restrictive specification. It supports only
 tiled data, including image tiles and interactivity grid tiles. Only the
-Spherical Mercator projection is supported for presentation - tile display -
+Rijksdriehoekstelsel projection is supported for presentation - tile display -
 and only latitude-longitude coordinates are supported for metadata such
 as bounds and centers.
 
 It is a minimum specification - only specifying the ways in which data
-must be retrievable. Thus MBTiles files can internally compress and optimize
-data, and construct views that adhere to the MBTiles specification.
+must be retrievable. Thus RDTiles files can internally compress and optimize
+data, and construct views that adhere to the RDTiles specification.
 
 Unlike [Spatialite](http://www.gaia-gis.it/spatialite/), GeoJSON,
-and Rasterlite, MBTiles is not raw data storage - it is storage
+and Rasterlite, RDTiles is not raw data storage - it is storage
 for presentational data, like rendered map tiles.
 
-One MBTiles file represents a single tileset, optionally including grids
+One RDTiles file represents a single tileset, optionally including grids
 of interactivity data. Multiple tilesets - layers, or maps in other terms,
-can be represented by multiple MBTiles files.
+can be represented by multiple RDTiles files.
 
 # Implementations
 
@@ -70,3 +73,4 @@ there are no royalties, restrictions, or requirements.
 * Will White (willwhite)
 * Konstantin Kaefer (kkaefer)
 * Justin Miller (incanus)
+* Steven Ottens (stvn) - just the RD bit
