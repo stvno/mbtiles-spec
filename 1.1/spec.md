@@ -74,7 +74,7 @@ The `zoom_level`, `tile_column`, and `tile_row` columns follow the
 [Tile Map Service Specification](http://wiki.osgeo.org/wiki/Tile_Map_Service_Specification) in
 their construction, but in a restricted form:
 
-* **The [global-mercator](http://wiki.osgeo.org/wiki/Tile_Map_Service_Specification#global-mercator) (aka Spherical Mercator) profile is assumed**
+* **The [RD-tiling](http://www.geonovum.nl/sites/default/files/20100614_Nederlandse_richtlijn_tiling_-_versie_1.0.pdf) profile is assumed**
 
 The `blob` column contains raw image data in binary.
 
